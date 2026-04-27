@@ -1,4 +1,4 @@
-import { ExternalLink, FileText, Calendar, Phone as PhoneIcon, Users, Award } from 'lucide-react';
+import { ExternalLink, FileText, Phone as PhoneIcon, Users, Award } from 'lucide-react';
 
 export function QuickLinks() {
   const links = [
@@ -10,18 +10,11 @@ export function QuickLinks() {
       href: '#',
     },
     {
-      icon: Calendar,
-      title: 'Дистанционное обучение',
-      description: 'Материалы для занятий дома',
-      color: 'bg-purple-500',
-      href: '#',
-    },
-    {
       icon: Users,
       title: 'Комплектование',
       description: 'Порядок зачисления ребенка в ДОУ',
       color: 'bg-green-500',
-      href: '#',
+      href: '/enrollment',
     },
     {
       icon: Award,
