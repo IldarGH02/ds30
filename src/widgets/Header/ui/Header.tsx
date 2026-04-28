@@ -19,7 +19,7 @@ export function Header() {
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center gap-4">
             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg">
-              <span className="text-3xl">🏫</span>
+              <a className="text-3xl" href='/'>🏫</a>
             </div>
             <div className="hidden md:block">
               <h1 className="font-bold text-xl">Детский сад № 30</h1>
