@@ -1,4 +1,4 @@
-import { ExternalLink, FileText, Phone as PhoneIcon, Users, Award, AlertCircle } from 'lucide-react';
+import { ExternalLink, FileText, Phone as PhoneIcon, Users, Award, AlertCircle, Building } from 'lucide-react';
 
 export function QuickLinks() {
   const links = [
@@ -8,6 +8,13 @@ export function QuickLinks() {
       description: 'Центры тестирования комплекса ГТО на 2026 год',
       color: 'bg-blue-500',
       href: '#',
+    },
+    {
+      icon: Building,
+      title: 'Сведения об образовательной организации',
+      description: 'Основные сведения, структура, документы, образовательные стандарты',
+      color: 'bg-indigo-500',
+      href: '/org-info',
     },
     {
       icon: Users,
@@ -22,7 +29,7 @@ export function QuickLinks() {
       description: 'Информация о платных образовательных услугах',
       color: 'bg-orange-500',
       href: '#',
-      warning: true,  // добавляем флаг предупреждения
+      warning: true,
       warningText: 'В 2025-2026 учебном году не предоставляются',
     },
   ];
@@ -60,7 +67,6 @@ export function QuickLinks() {
                       {link.description}
                     </p>
 
-                    {/* Блок с предупреждением для платных услуг */}
                     {link.warning && (
                         <div className="mb-3 p-2 bg-orange-100 rounded-lg border border-orange-200">
                           <div className="flex items-center gap-1 text-orange-700 text-xs font-medium">

@@ -1,4 +1,4 @@
-// features/protection-services/ui/ProtectionServicesContent.tsx
+// features/protection-services/index.ts/ProtectionServicesContent.tsx
 export const ProtectionServicesContent = () => {
     // Ссылки на PDF-файлы (позже будут заменены на реальные)
     const pdfLinks = {

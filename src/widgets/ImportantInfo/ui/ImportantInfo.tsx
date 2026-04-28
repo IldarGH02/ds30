@@ -1,4 +1,5 @@
-import { Bell, Shield, Users, BookOpen } from 'lucide-react';
+import { Bell, Shield, Users, BookOpen, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function ImportantInfo() {
   const infoCards = [
@@ -7,24 +8,28 @@ export function ImportantInfo() {
       title: 'Консультативный пункт',
       description: 'Для родителей, дети которых не посещают дошкольную организацию',
       color: 'from-yellow-400 to-orange-500',
+      link: '/consulting-center'
     },
     {
       icon: Shield,
       title: 'Независимая оценка',
       description: 'Независимая оценка качества условий образовательной деятельности',
       color: 'from-blue-400 to-indigo-500',
+      link: '/quality-assessment',
     },
     {
       icon: Users,
       title: 'Национальный проект',
       description: 'Информирование о национальных проектах "Образование" и "Демография"',
       color: 'from-purple-400 to-pink-500',
+      link: '/national-projects',
     },
     {
       icon: BookOpen,
       title: 'Персонифицированное финансирование',
-      description: 'Дополнительное образование детей с персонифицированным финансированием',
+      description: 'Дополнительное образование детей с персонифицировантированным финансированием',
       color: 'from-green-400 to-teal-500',
+      link: '/for-parents', // ведёт на страницу с родительским разделом (там есть этот пункт в карточке "Национальные проекты")
     },
   ];
 
@@ -42,22 +47,28 @@ export function ImportantInfo() {
           {infoCards.map((card, index) => {
             const Icon = card.icon;
             return (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-              >
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${card.color} flex items-center justify-center mb-4`}>
-                  <Icon className="w-7 h-7 text-white" />
-                </div>
+                <Link
+                    key={index}
+                    to={card.link}
+                    className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 block"
+                >
+                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${card.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                    <Icon className="w-7 h-7 text-white" />
+                  </div>
 
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
-                  {card.title}
-                </h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    {card.title}
+                  </h3>
 
-                <p className="text-gray-600 text-sm">
-                  {card.description}
-                </p>
-              </div>
+                  <p className="text-gray-600 text-sm mb-3">
+                    {card.description}
+                  </p>
+
+                  <div className="flex items-center text-blue-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                    Подробнее
+                    <ExternalLink className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </Link>
             );
           })}
         </div>

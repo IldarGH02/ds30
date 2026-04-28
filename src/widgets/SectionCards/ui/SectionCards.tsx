@@ -4,8 +4,8 @@ export function SectionCards() {
   const sections = [
     {
       icon: Book,
-      title: 'Сведения об организации',
-      description: 'Основные сведения, структура, документы, образовательные стандарты',
+      title: 'Основные сведения',
+      description: 'Основные сведения об образовательной организации',
       color: 'from-blue-400 to-blue-600',
       href: '#info',
       path: '/info'

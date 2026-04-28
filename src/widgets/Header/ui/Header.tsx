@@ -7,9 +7,9 @@ export function Header() {
   const navigation = [
     { name: 'Главная', href: '/' },
     { name: 'История', href: '/history' },
-    { name: 'Достижения', href: '#achievements' },
+    { name: 'Достижения', href: '/achievements' },
     { name: 'Родителям', href: '/for-parents' },
-    { name: 'Новости', href: '#news' },
+    { name: 'Новости', href: '/news' },
     { name: 'Контакты', href: '#contacts' },
   ];
 
@@ -41,9 +41,20 @@ export function Header() {
 
           <div className="hidden md:flex items-center gap-4">
             <div className="text-right">
-              <div className="flex items-center gap-2 text-sm">
-                <Phone className="w-4 h-4" />
-                <span>956-08-28</span>
+              <div className="flex items-center gap-2 text-sm bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full hover:bg-white/20 transition-colors">
+                <Phone className="w-4 h-4 text-white/80" />
+                <div>
+                  <span className="text-white/60 text-xs">Телефон:</span>
+                  <a
+                      href="tel:+78469560828"
+                      className="text-white font-medium hover:text-white/90 transition-colors ml-1"
+                  >
+                    8 (846) 956-08-28
+                  </a>
+                </div>
+              </div>
+              <div className="text-xs text-white/50 mt-0.5">
+                <span>пн-пт с 9:00 до 17:00</span>
               </div>
             </div>
           </div>
