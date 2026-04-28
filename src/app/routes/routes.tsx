@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "@/pages/LayoutPage";
 import { ForParentsPage, HistoryPage, MainPage } from "@/pages";
-import { EnrollmentPage } from "@/pages/EnrollmentPage/EnrollmentPage.tsx";
+import { EnrollmentPage } from "@/pages/EnrollmentPage/ui/EnrollmentPage.tsx";
 import { NationalProjectsPage } from "@/pages/NationalProjectsPage/ui/NationalProjectsPage.tsx";
 import { QualityAssessmentPage } from "@/pages/QualitiAssessment";
 import { ConsultingCenterPage } from "@/pages/ConsultingCenterPage";

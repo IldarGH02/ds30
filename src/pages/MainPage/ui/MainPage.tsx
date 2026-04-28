@@ -6,16 +6,18 @@ import {
   QuickLinks,
   InfoBanner,
 } from '@/widgets';
+import {SEO} from "@/entites/SEO";
 
 export function MainPage() {
       return (
             <>
-              <Hero />
-              <SectionCards />
-              <ImportantInfo />
-              <WelcomePoem />
-              <QuickLinks />
-              <InfoBanner />
+                <SEO/>
+                <Hero />
+                <SectionCards />
+                <ImportantInfo />
+                <WelcomePoem />
+                <QuickLinks />
+                <InfoBanner />
             </>
       );
 }

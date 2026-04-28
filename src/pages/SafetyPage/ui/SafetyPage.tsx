@@ -1,3 +1,5 @@
+import {SEO} from "@/entites/SEO";
+
 export const SafetyPage = () => {
     // Ссылки на документы и видео
     const safetyLinks = {
@@ -21,175 +23,182 @@ export const SafetyPage = () => {
     };
 
     return (
-        <section className="py-12 bg-gray-50 min-h-screen">
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <>
+            <SEO
+                title="Безопасность"
+                description="Правила безопасного поведения на дорогах, объектах железнодорожного транспорта и в быту"
+                url="https://ds30.vercel.app/safety"
+            />
+            <section className="py-12 bg-gray-50 min-h-screen">
+                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                {/* Заголовок страницы */}
-                <div className="text-center mb-10">
-                    <div className="inline-block bg-gradient-to-r from-red-100 to-orange-100 rounded-full px-6 py-2 mb-4">
-                        <span className="text-red-600 font-medium">🛡️ Безопасность детей</span>
+                    {/* Заголовок страницы */}
+                    <div className="text-center mb-10">
+                        <div className="inline-block bg-gradient-to-r from-red-100 to-orange-100 rounded-full px-6 py-2 mb-4">
+                            <span className="text-red-600 font-medium">🛡️ Безопасность детей</span>
+                        </div>
+                        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                            Безопасность
+                        </h1>
+                        <p className="text-gray-600 max-w-2xl mx-auto">
+                            Правила безопасного поведения на дорогах, объектах железнодорожного транспорта и в быту
+                        </p>
                     </div>
-                    <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-                        Безопасность
-                    </h1>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
-                        Правила безопасного поведения на дорогах, объектах железнодорожного транспорта и в быту
-                    </p>
-                </div>
 
-                {/* ========== БЛОК 1: ДЕТСКАЯ БЕЗОПАСНОСТЬ ========== */}
-                <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-6">
-                    <div className="border-l-4 border-red-500 bg-red-50 px-5 py-3">
-                        <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
-                            <span className="text-2xl">🏠</span>
-                            <span>Детская безопасность</span>
-                        </h2>
+                    {/* ========== БЛОК 1: ДЕТСКАЯ БЕЗОПАСНОСТЬ ========== */}
+                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-6">
+                        <div className="border-l-4 border-red-500 bg-red-50 px-5 py-3">
+                            <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+                                <span className="text-2xl">🏠</span>
+                                <span>Детская безопасность</span>
+                            </h2>
+                        </div>
+                        <div className="p-5 space-y-3">
+                            <a
+                                href={safetyLinks.childSafety}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors border border-gray-200"
+                            >
+                                <svg className="w-5 h-5 text-red-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                                <span className="text-gray-700">Памятка для родителей «Не оставляйте детей без присмотра»</span>
+                            </a>
+                        </div>
                     </div>
-                    <div className="p-5 space-y-3">
-                        <a
-                            href={safetyLinks.childSafety}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors border border-gray-200"
-                        >
-                            <svg className="w-5 h-5 text-red-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                            </svg>
-                            <span className="text-gray-700">Памятка для родителей «Не оставляйте детей без присмотра»</span>
-                        </a>
-                    </div>
-                </div>
 
-                {/* ========== БЛОК 2: БЕЗОПАСНОСТЬ НА Ж/Д ТРАНСПОРТЕ ========== */}
-                <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-6">
-                    <div className="border-l-4 border-blue-500 bg-blue-50 px-5 py-3">
-                        <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
-                            <span className="text-2xl">🚂</span>
-                            <span>Безопасное поведение на объектах железнодорожного транспорта</span>
-                        </h2>
-                    </div>
-                    <div className="p-5 space-y-4">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                            <div className="border border-gray-200 rounded-lg p-3 bg-gray-50">
-                                <div className="flex items-center gap-2 mb-1">
-                                    <span className="text-lg">🎥</span>
-                                    <span className="font-medium text-gray-700 text-sm">Железная дорога — Железная Дисциплина</span>
+                    {/* ========== БЛОК 2: БЕЗОПАСНОСТЬ НА Ж/Д ТРАНСПОРТЕ ========== */}
+                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-6">
+                        <div className="border-l-4 border-blue-500 bg-blue-50 px-5 py-3">
+                            <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+                                <span className="text-2xl">🚂</span>
+                                <span>Безопасное поведение на объектах железнодорожного транспорта</span>
+                            </h2>
+                        </div>
+                        <div className="p-5 space-y-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <div className="border border-gray-200 rounded-lg p-3 bg-gray-50">
+                                    <div className="flex items-center gap-2 mb-1">
+                                        <span className="text-lg">🎥</span>
+                                        <span className="font-medium text-gray-700 text-sm">Железная дорога — Железная Дисциплина</span>
+                                    </div>
+                                    <a href={safetyLinks.railwayDiscipline} target="_blank" rel="noopener noreferrer" className="text-blue-600 text-sm hover:underline break-all">Смотреть видео</a>
                                 </div>
-                                <a href={safetyLinks.railwayDiscipline} target="_blank" rel="noopener noreferrer" className="text-blue-600 text-sm hover:underline break-all">Смотреть видео</a>
-                            </div>
-                            <div className="border border-gray-200 rounded-lg p-3 bg-gray-50">
-                                <div className="flex items-center gap-2 mb-1">
-                                    <span className="text-lg">🎥</span>
-                                    <span className="font-medium text-gray-700 text-sm">1 Урок безопасности на ЖД транспорте</span>
+                                <div className="border border-gray-200 rounded-lg p-3 bg-gray-50">
+                                    <div className="flex items-center gap-2 mb-1">
+                                        <span className="text-lg">🎥</span>
+                                        <span className="font-medium text-gray-700 text-sm">1 Урок безопасности на ЖД транспорте</span>
+                                    </div>
+                                    <a href={safetyLinks.railwayLesson1} target="_blank" rel="noopener noreferrer" className="text-blue-600 text-sm hover:underline break-all">Смотреть видео</a>
                                 </div>
-                                <a href={safetyLinks.railwayLesson1} target="_blank" rel="noopener noreferrer" className="text-blue-600 text-sm hover:underline break-all">Смотреть видео</a>
-                            </div>
-                            <div className="border border-gray-200 rounded-lg p-3 bg-gray-50">
-                                <div className="flex items-center gap-2 mb-1">
-                                    <span className="text-lg">🎥</span>
-                                    <span className="font-medium text-gray-700 text-sm">2 Урок безопасности на ЖД транспорте</span>
+                                <div className="border border-gray-200 rounded-lg p-3 bg-gray-50">
+                                    <div className="flex items-center gap-2 mb-1">
+                                        <span className="text-lg">🎥</span>
+                                        <span className="font-medium text-gray-700 text-sm">2 Урок безопасности на ЖД транспорте</span>
+                                    </div>
+                                    <a href={safetyLinks.railwayLesson2} target="_blank" rel="noopener noreferrer" className="text-blue-600 text-sm hover:underline break-all">Смотреть видео</a>
                                 </div>
-                                <a href={safetyLinks.railwayLesson2} target="_blank" rel="noopener noreferrer" className="text-blue-600 text-sm hover:underline break-all">Смотреть видео</a>
                             </div>
-                        </div>
 
-                        <div className="mt-2">
-                            <h4 className="font-medium text-gray-700 mb-2 text-sm">Короткие видеоролики о безопасности на ЖД транспорте:</h4>
-                            <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
-                                <a href={safetyLinks.railwayVideo1} target="_blank" rel="noopener noreferrer" className="text-center p-2 bg-gray-100 rounded-lg hover:bg-blue-50 transition-colors">
-                                    <span className="text-xl">🎬</span>
-                                    <p className="text-xs text-gray-600 mt-1">Видео 1</p>
-                                </a>
-                                <a href={safetyLinks.railwayVideo2} target="_blank" rel="noopener noreferrer" className="text-center p-2 bg-gray-100 rounded-lg hover:bg-blue-50 transition-colors">
-                                    <span className="text-xl">🎬</span>
-                                    <p className="text-xs text-gray-600 mt-1">Видео 2</p>
-                                </a>
-                                <a href={safetyLinks.railwayVideo3} target="_blank" rel="noopener noreferrer" className="text-center p-2 bg-gray-100 rounded-lg hover:bg-blue-50 transition-colors">
-                                    <span className="text-xl">🎬</span>
-                                    <p className="text-xs text-gray-600 mt-1">Видео 3</p>
-                                </a>
-                                <a href={safetyLinks.railwayVideo4} target="_blank" rel="noopener noreferrer" className="text-center p-2 bg-gray-100 rounded-lg hover:bg-blue-50 transition-colors">
-                                    <span className="text-xl">🎬</span>
-                                    <p className="text-xs text-gray-600 mt-1">Видео 4</p>
-                                </a>
-                                <a href={safetyLinks.railwayVideo5} target="_blank" rel="noopener noreferrer" className="text-center p-2 bg-gray-100 rounded-lg hover:bg-blue-50 transition-colors">
-                                    <span className="text-xl">🎬</span>
-                                    <p className="text-xs text-gray-600 mt-1">Видео 5</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* ========== БЛОК 3: ДОРОЖНАЯ БЕЗОПАСНОСТЬ ========== */}
-                <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-6">
-                    <div className="border-l-4 border-green-500 bg-green-50 px-5 py-3">
-                        <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
-                            <span className="text-2xl">🚦</span>
-                            <span>Дорожная безопасность (ПДД)</span>
-                        </h2>
-                    </div>
-                    <div className="p-5 space-y-4">
-                        {/* Методические рекомендации */}
-                        <div>
-                            <h3 className="font-semibold text-gray-800 mb-2 flex items-center gap-2 text-sm">
-                                <span>📖</span> Методические рекомендации
-                            </h3>
-                            <div className="space-y-2">
-                                <a href={safetyLinks.pddGames} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-sm">
-                                    <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                                    <span className="text-gray-700">Игры для дошкольников по ПДД</span>
-                                </a>
-                                <a href={safetyLinks.pddCardFile} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-sm">
-                                    <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                                    <span className="text-gray-700">Картотека игр и физминуток по ПДД</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        {/* Познавательная информация */}
-                        <div>
-                            <h3 className="font-semibold text-gray-800 mb-2 flex items-center gap-2 text-sm">
-                                <span>🎨</span> Познавательная информация
-                            </h3>
-                            <div className="space-y-2">
-                                <a href={safetyLinks.pddColoring} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-sm">
-                                    <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                                    <span className="text-gray-700">Детские раскраски по ПДД</span>
-                                </a>
-                                <a href={safetyLinks.pddRiddles} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-sm">
-                                    <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                                    <span className="text-gray-700">Загадки о ПДД</span>
-                                </a>
-                                <a href={safetyLinks.pddWeather} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-sm">
-                                    <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                                    <span className="text-gray-700">Памятка по безопасности на дорогах при различной погоде</span>
-                                </a>
-                                <a href={safetyLinks.pddPedestrian} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-sm">
-                                    <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                                    <span className="text-gray-700">Памятка юного пешехода</span>
-                                </a>
-                                <a href={safetyLinks.pddCarTransport} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-sm">
-                                    <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                                    <span className="text-gray-700">Правила перевозки детей в автомобиле</span>
-                                </a>
-                                <a href={safetyLinks.pddPoems} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-sm">
-                                    <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                                    <span className="text-gray-700">Стихи по ПДД детям</span>
-                                </a>
+                            <div className="mt-2">
+                                <h4 className="font-medium text-gray-700 mb-2 text-sm">Короткие видеоролики о безопасности на ЖД транспорте:</h4>
+                                <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
+                                    <a href={safetyLinks.railwayVideo1} target="_blank" rel="noopener noreferrer" className="text-center p-2 bg-gray-100 rounded-lg hover:bg-blue-50 transition-colors">
+                                        <span className="text-xl">🎬</span>
+                                        <p className="text-xs text-gray-600 mt-1">Видео 1</p>
+                                    </a>
+                                    <a href={safetyLinks.railwayVideo2} target="_blank" rel="noopener noreferrer" className="text-center p-2 bg-gray-100 rounded-lg hover:bg-blue-50 transition-colors">
+                                        <span className="text-xl">🎬</span>
+                                        <p className="text-xs text-gray-600 mt-1">Видео 2</p>
+                                    </a>
+                                    <a href={safetyLinks.railwayVideo3} target="_blank" rel="noopener noreferrer" className="text-center p-2 bg-gray-100 rounded-lg hover:bg-blue-50 transition-colors">
+                                        <span className="text-xl">🎬</span>
+                                        <p className="text-xs text-gray-600 mt-1">Видео 3</p>
+                                    </a>
+                                    <a href={safetyLinks.railwayVideo4} target="_blank" rel="noopener noreferrer" className="text-center p-2 bg-gray-100 rounded-lg hover:bg-blue-50 transition-colors">
+                                        <span className="text-xl">🎬</span>
+                                        <p className="text-xs text-gray-600 mt-1">Видео 4</p>
+                                    </a>
+                                    <a href={safetyLinks.railwayVideo5} target="_blank" rel="noopener noreferrer" className="text-center p-2 bg-gray-100 rounded-lg hover:bg-blue-50 transition-colors">
+                                        <span className="text-xl">🎬</span>
+                                        <p className="text-xs text-gray-600 mt-1">Видео 5</p>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                {/* Контактная информация */}
-                <div className="mt-6 p-4 bg-gradient-to-r from-red-50 to-orange-50 rounded-xl text-center">
-                    <p className="text-gray-700 text-sm">
-                        📞 По вопросам безопасности можно обратиться к администрации детского сада: <strong className="text-gray-800">956-08-28</strong>
-                    </p>
-                </div>
+                    {/* ========== БЛОК 3: ДОРОЖНАЯ БЕЗОПАСНОСТЬ ========== */}
+                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-6">
+                        <div className="border-l-4 border-green-500 bg-green-50 px-5 py-3">
+                            <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+                                <span className="text-2xl">🚦</span>
+                                <span>Дорожная безопасность (ПДД)</span>
+                            </h2>
+                        </div>
+                        <div className="p-5 space-y-4">
+                            {/* Методические рекомендации */}
+                            <div>
+                                <h3 className="font-semibold text-gray-800 mb-2 flex items-center gap-2 text-sm">
+                                    <span>📖</span> Методические рекомендации
+                                </h3>
+                                <div className="space-y-2">
+                                    <a href={safetyLinks.pddGames} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-sm">
+                                        <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                                        <span className="text-gray-700">Игры для дошкольников по ПДД</span>
+                                    </a>
+                                    <a href={safetyLinks.pddCardFile} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-sm">
+                                        <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                                        <span className="text-gray-700">Картотека игр и физминуток по ПДД</span>
+                                    </a>
+                                </div>
+                            </div>
 
-            </div>
-        </section>
+                            {/* Познавательная информация */}
+                            <div>
+                                <h3 className="font-semibold text-gray-800 mb-2 flex items-center gap-2 text-sm">
+                                    <span>🎨</span> Познавательная информация
+                                </h3>
+                                <div className="space-y-2">
+                                    <a href={safetyLinks.pddColoring} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-sm">
+                                        <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                                        <span className="text-gray-700">Детские раскраски по ПДД</span>
+                                    </a>
+                                    <a href={safetyLinks.pddRiddles} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-sm">
+                                        <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                                        <span className="text-gray-700">Загадки о ПДД</span>
+                                    </a>
+                                    <a href={safetyLinks.pddWeather} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-sm">
+                                        <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                                        <span className="text-gray-700">Памятка по безопасности на дорогах при различной погоде</span>
+                                    </a>
+                                    <a href={safetyLinks.pddPedestrian} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-sm">
+                                        <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                                        <span className="text-gray-700">Памятка юного пешехода</span>
+                                    </a>
+                                    <a href={safetyLinks.pddCarTransport} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-sm">
+                                        <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                                        <span className="text-gray-700">Правила перевозки детей в автомобиле</span>
+                                    </a>
+                                    <a href={safetyLinks.pddPoems} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-sm">
+                                        <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                                        <span className="text-gray-700">Стихи по ПДД детям</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Контактная информация */}
+                    <div className="mt-6 p-4 bg-gradient-to-r from-red-50 to-orange-50 rounded-xl text-center">
+                        <p className="text-gray-700 text-sm">
+                            📞 По вопросам безопасности можно обратиться к администрации детского сада: <strong className="text-gray-800">956-08-28</strong>
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+        </>
     );
 };

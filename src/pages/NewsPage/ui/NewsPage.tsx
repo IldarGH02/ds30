@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import {SEO} from "@/entites/SEO";
 
 interface NewsItem {
     id: number;
@@ -56,104 +57,110 @@ export const NewsPage = () => {
     };
 
     return (
-        <section className="py-12 bg-gray-50 min-h-screen">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <>
+            <SEO
+                title="Новости детского сада"
+                description="Актуальная информация о жизни детского сада и изменениях в образовательном процессе"
+                url="https://ds30.vercel.app/news"
+            />
+            <section className="py-12 bg-gray-50 min-h-screen">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                {/* Заголовок */}
-                <div className="text-center mb-10">
-                    <div className="inline-block bg-gradient-to-r from-blue-100 to-cyan-100 rounded-full px-6 py-2 mb-4">
-                        <span className="text-blue-600 font-medium">📰 Последние новости</span>
+                    {/* Заголовок */}
+                    <div className="text-center mb-10">
+                        <div className="inline-block bg-gradient-to-r from-blue-100 to-cyan-100 rounded-full px-6 py-2 mb-4">
+                            <span className="text-blue-600 font-medium">📰 Последние новости</span>
+                        </div>
+                        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                            Новости детского сада
+                        </h1>
+                        <p className="text-gray-600 max-w-2xl mx-auto">
+                            Актуальная информация о жизни детского сада и изменениях в образовательном процессе
+                        </p>
                     </div>
-                    <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-                        Новости детского сада
-                    </h1>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
-                        Актуальная информация о жизни детского сада и изменениях в образовательном процессе
-                    </p>
-                </div>
 
-                {/* Список новостей */}
-                <div className="space-y-6">
-                    {news.map((item) => (
-                        <div key={item.id} className="bg-white rounded-2xl shadow-lg overflow-hidden">
-                            {/* Заголовок новости (кликабельный) */}
-                            <button
-                                onClick={() => toggleNews(item.id)}
-                                className="w-full text-left px-6 py-4 hover:bg-gray-50 transition-colors flex justify-between items-center"
-                            >
-                                <div>
-                                    <div className="text-sm text-blue-600 mb-1">{item.date}</div>
-                                    <h2 className="text-xl font-bold text-gray-800">{item.title}</h2>
-                                </div>
-                                <svg
-                                    className={`w-6 h-6 text-gray-400 transition-transform duration-200 ${expandedNewsId === item.id ? 'rotate-180' : ''}`}
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
+                    {/* Список новостей */}
+                    <div className="space-y-6">
+                        {news.map((item) => (
+                            <div key={item.id} className="bg-white rounded-2xl shadow-lg overflow-hidden">
+                                {/* Заголовок новости (кликабельный) */}
+                                <button
+                                    onClick={() => toggleNews(item.id)}
+                                    className="w-full text-left px-6 py-4 hover:bg-gray-50 transition-colors flex justify-between items-center"
                                 >
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-
-                            {/* Содержимое новости (раскрывается) */}
-                            {expandedNewsId === item.id && (
-                                <div className="px-6 pb-6 pt-2 border-t border-gray-100">
-                                    <div className="prose max-w-none">
-                                        {formatContent(item.content)}
+                                    <div>
+                                        <div className="text-sm text-blue-600 mb-1">{item.date}</div>
+                                        <h2 className="text-xl font-bold text-gray-800">{item.title}</h2>
                                     </div>
+                                    <svg
+                                        className={`w-6 h-6 text-gray-400 transition-transform duration-200 ${expandedNewsId === item.id ? 'rotate-180' : ''}`}
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
 
-                                    {/* Прикреплённые файлы */}
-                                    {item.files && item.files.length > 0 && (
-                                        <div className="mt-4 pt-3 border-t border-gray-100">
-                                            <h4 className="font-semibold text-gray-700 mb-2 text-sm">📎 Прикреплённые документы:</h4>
-                                            <ul className="space-y-1">
-                                                {item.files.map((file, idx) => (
-                                                    <li key={idx}>
-                                                        <a
-                                                            href={file.url}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className="text-blue-600 hover:underline text-sm flex items-center gap-2"
-                                                        >
-                                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                                            </svg>
-                                                            <span>{file.title}</span>
-                                                        </a>
-                                                    </li>
-                                                ))}
-                                            </ul>
+                                {/* Содержимое новости (раскрывается) */}
+                                {expandedNewsId === item.id && (
+                                    <div className="px-6 pb-6 pt-2 border-t border-gray-100">
+                                        <div className="prose max-w-none">
+                                            {formatContent(item.content)}
                                         </div>
-                                    )}
-                                </div>
-                            )}
-                        </div>
-                    ))}
-                </div>
 
-                {/* Если новостей нет */}
-                {news.length === 0 && (
-                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-                        <div className="p-12 text-center">
-                            <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <svg className="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                                </svg>
+                                        {/* Прикреплённые файлы */}
+                                        {item.files && item.files.length > 0 && (
+                                            <div className="mt-4 pt-3 border-t border-gray-100">
+                                                <h4 className="font-semibold text-gray-700 mb-2 text-sm">📎 Прикреплённые документы:</h4>
+                                                <ul className="space-y-1">
+                                                    {item.files.map((file, idx) => (
+                                                        <li key={idx}>
+                                                            <a
+                                                                href={file.url}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="text-blue-600 hover:underline text-sm flex items-center gap-2"
+                                                            >
+                                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                                                </svg>
+                                                                <span>{file.title}</span>
+                                                            </a>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
                             </div>
-                            <p className="text-gray-500">В данный момент новостей нет.</p>
-                        </div>
+                        ))}
                     </div>
-                )}
 
-                {/* Контактная информация */}
-                <div className="mt-6 p-4 bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl text-center">
-                    <p className="text-gray-600 text-sm">
-                        📞 По вопросам можно обратиться к администрации детского сада: <strong className="text-gray-800">956-08-28</strong>
-                    </p>
-                </div>
+                    {/* Если новостей нет */}
+                    {news.length === 0 && (
+                        <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+                            <div className="p-12 text-center">
+                                <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <svg className="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                                    </svg>
+                                </div>
+                                <p className="text-gray-500">В данный момент новостей нет.</p>
+                            </div>
+                        </div>
+                    )}
 
-                {/* Для администратора: кнопка добавления новости (пока скрыта/закомментирована) */}
-                {/*
+                    {/* Контактная информация */}
+                    <div className="mt-6 p-4 bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl text-center">
+                        <p className="text-gray-600 text-sm">
+                            📞 По вопросам можно обратиться к администрации детского сада: <strong className="text-gray-800">956-08-28</strong>
+                        </p>
+                    </div>
+
+                    {/* Для администратора: кнопка добавления новости (пока скрыта/закомментирована) */}
+                    {/*
         <div className="mt-6 text-center">
           <button className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors">
             + Добавить новость
@@ -161,7 +168,8 @@ export const NewsPage = () => {
         </div>
         */}
 
-            </div>
-        </section>
+                </div>
+            </section>
+        </>
     );
 };

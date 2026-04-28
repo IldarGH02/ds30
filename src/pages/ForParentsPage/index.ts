@@ -1,1 +1,1 @@
-export * from './ForParentsPage'
+export * from './ui/ForParentsPage.tsx'

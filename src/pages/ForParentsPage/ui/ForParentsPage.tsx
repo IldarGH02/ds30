@@ -3,6 +3,7 @@ import { menuStructure, MenuItem } from "@/features/Parents/config/menuStructure
 import { useState } from "react";
 import { getContentByTitle } from "@/features";
 import { GenericModal } from "@/entites/Parents/Modal/GenericModal.tsx";
+import {SEO} from "@/entites/SEO";
 
 export const ForParentsPage = () => {
     const [modalState, setModalState] = useState({
@@ -28,6 +29,12 @@ export const ForParentsPage = () => {
 
     return (
         <>
+            <SEO
+                title="Информация для родителей"
+                description="Здесь собрана вся необходимая информация о жизни детского сада,
+                            воспитании и развитии ваших детей"
+                url="https://ds30.vercel.app/for-parents"
+            />
             <section className="py-12 bg-gray-50 min-h-screen">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Заголовок */}
