@@ -6,7 +6,7 @@ export const AchievementsPage = () => {
             <SEO
                 title="Достижения"
                 description="Достижения десткого сада и его воспитанников"
-                url="https://ds30.vercel.app/achivments"
+                url="https://ds30.vercel.app/achievements"
             />
             <section className="py-12 bg-gray-50 min-h-screen">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

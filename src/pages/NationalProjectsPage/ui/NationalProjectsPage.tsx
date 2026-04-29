@@ -4,9 +4,9 @@ export const NationalProjectsPage = () => {
     return (
         <>
             <SEO
-                title=""
-                description=""
-                url="https://ds30.vercel.app/methodology"
+                title="Национальные проекты «Образование» и «Демография»"
+                description="Информация о реализации национальных проектов, приоритетах и нормативно-правовой базе для родителей."
+                url="https://ds30.vercel.app/national-projects"
             />
             <section className="py-12 bg-gray-50 min-h-screen">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

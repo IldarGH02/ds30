@@ -46,7 +46,7 @@ export const MethodologyPage = () => {
             <SEO
                 title="Методическая копилка"
                 description="Полезные материалы, консультации и рекомендации специалистов детского сада"
-                url="https://ds30.vercel.app/national-projects"
+                url="https://ds30.vercel.app/methodology"
             />
             <section className="py-12 bg-gray-50 min-h-screen">
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

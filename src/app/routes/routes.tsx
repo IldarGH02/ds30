@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "@/pages/LayoutPage";
 import { ForParentsPage, HistoryPage, MainPage } from "@/pages";
-import { EnrollmentPage } from "@/pages/EnrollmentPage/ui/EnrollmentPage.tsx";
-import { NationalProjectsPage } from "@/pages/NationalProjectsPage/ui/NationalProjectsPage.tsx";
+import { EnrollmentPage } from "@/pages/EnrollmentPage";
+import { NationalProjectsPage } from "@/pages/NationalProjectsPage";
 import { QualityAssessmentPage } from "@/pages/QualitiAssessment";
 import { ConsultingCenterPage } from "@/pages/ConsultingCenterPage";
 import { MethodologyPage } from "@/pages/MethodologyPage";
@@ -13,7 +13,7 @@ import { GroupsPage } from "@/pages/GroupsPage";
 import { NewsPage } from "@/pages/NewsPage";
 import { AchievementsPage } from "@/pages/AchievementsPage";
 import { PrivacyPolicyPage } from "@/pages/PrivacyPolicyPage";
-import {OrgInfoPage} from "@/pages/OrgInfoPage/ui/OrgInfoPage.tsx";
+import { OrgInfoPage } from "@/pages/OrgInfoPage";
 
 export const MainRoutes = () => {
     return (
