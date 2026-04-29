@@ -1,6 +1,12 @@
-import { ExternalLink, FileText, Phone as PhoneIcon, Users, Award, AlertCircle, Building } from 'lucide-react';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { GenericModal } from '@/entites/Parents/Modal/GenericModal';
+import { HelplineContent } from "@/features/helpline";
+import { ExternalLink, FileText, Phone as PhoneIcon, Users, Award, AlertCircle, Building, Leaf } from 'lucide-react';
 
 export function QuickLinks() {
+  const [isHelplineModalOpen, setIsHelplineModalOpen] = useState(false);
+
   const links = [
     {
       icon: FileText,
@@ -8,6 +14,7 @@ export function QuickLinks() {
       description: 'Центры тестирования комплекса ГТО на 2026 год',
       color: 'bg-blue-500',
       href: 'https://detsad30sam.ru/wa-data/public/site/docs/30/2526/ГТО012026.pdf',
+      isExternal: true,
     },
     {
       icon: Building,
@@ -15,6 +22,7 @@ export function QuickLinks() {
       description: 'Основные сведения, структура, документы, образовательные стандарты',
       color: 'bg-indigo-500',
       href: '/org-info',
+      isExternal: false,
     },
     {
       icon: Users,
@@ -22,6 +30,7 @@ export function QuickLinks() {
       description: 'Порядок зачисления ребенка в ДОУ',
       color: 'bg-green-500',
       href: '/enrollment',
+      isExternal: false,
     },
     {
       icon: Award,
@@ -31,10 +40,12 @@ export function QuickLinks() {
       href: '#',
       warning: true,
       warningText: 'В 2025-2026 учебном году не предоставляются',
+      isExternal: false,
     },
   ];
 
   return (
+    <>
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -47,11 +58,17 @@ export function QuickLinks() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {links.map((link, index) => {
               const Icon = link.icon;
+              const cardClassName =
+                "group relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-6 border-2 border-gray-200 hover:border-transparent hover:shadow-2xl transition-all duration-300 block";
+              
               return (
+                link.isExternal ? (
                   <a
-                      key={index}
-                      href={link.href}
-                      className="group relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-6 border-2 border-gray-200 hover:border-transparent hover:shadow-2xl transition-all duration-300"
+                    key={index}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={cardClassName}
                   >
                     <div className={`absolute inset-0 ${link.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity`}></div>
 
@@ -68,12 +85,12 @@ export function QuickLinks() {
                     </p>
 
                     {link.warning && (
-                        <div className="mb-3 p-2 bg-orange-100 rounded-lg border border-orange-200">
-                          <div className="flex items-center gap-1 text-orange-700 text-xs font-medium">
-                            <AlertCircle className="w-3 h-3" />
-                            <span>{link.warningText}</span>
-                          </div>
+                      <div className="mb-3 p-2 bg-orange-100 rounded-lg border border-orange-200">
+                        <div className="flex items-center gap-1 text-orange-700 text-xs font-medium">
+                          <AlertCircle className="w-3 h-3" />
+                          <span>{link.warningText}</span>
                         </div>
+                      </div>
                     )}
 
                     <div className="flex items-center text-blue-600 text-sm font-medium">
@@ -81,14 +98,53 @@ export function QuickLinks() {
                       <ExternalLink className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </a>
+                ) : (
+                  <Link
+                    key={index}
+                    to={link.href}
+                    className={cardClassName}
+                  >
+                    <div className={`absolute inset-0 ${link.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity`}></div>
+
+                    <div className={`w-12 h-12 ${link.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                      <Icon className="w-6 h-6 text-white" />
+                    </div>
+
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                      {link.title}
+                    </h3>
+
+                    <p className="text-gray-600 text-sm mb-4">
+                      {link.description}
+                    </p>
+
+                    {link.warning && (
+                      <div className="mb-3 p-2 bg-orange-100 rounded-lg border border-orange-200">
+                        <div className="flex items-center gap-1 text-orange-700 text-xs font-medium">
+                          <AlertCircle className="w-3 h-3" />
+                          <span>{link.warningText}</span>
+                        </div>
+                      </div>
+                    )}
+
+                    <div className="flex items-center text-blue-600 text-sm font-medium">
+                      Подробнее
+                      <ExternalLink className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </Link>
+                )
               );
             })}
           </div>
 
           <div className="mt-12 grid md:grid-cols-3 gap-6">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border-2 border-blue-200">
+            {/* Карточка телефона доверия — открывает модальное окно */}
+            <button
+              onClick={() => setIsHelplineModalOpen(true)}
+              className="group text-left w-full bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border-2 border-blue-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            >
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                   <PhoneIcon className="w-5 h-5 text-white" />
                 </div>
                 <h4 className="font-bold text-gray-900">Телефон доверия</h4>
@@ -96,33 +152,44 @@ export function QuickLinks() {
               <p className="text-gray-700 text-sm">
                 Помощь детям и родителям в трудных ситуациях
               </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border-2 border-green-200">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
-                  <span className="text-xl">🏃</span>
-                </div>
-                <h4 className="font-bold text-gray-900">Движение ГТО</h4>
+              <div className="mt-3 text-blue-600 text-sm font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                Открыть телефоны
+                <ExternalLink className="w-3 h-3" />
               </div>
-              <p className="text-gray-700 text-sm">
-                Физическое развитие и здоровый образ жизни
-              </p>
-            </div>
+            </button>
 
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border-2 border-purple-200">
+            {/* Карточка Движение ГТО — удалена */}
+
+            {/* Карточка экологической странички — ссылка на страницу */}
+            <Link
+              to="/ecology"
+              className="group text-left w-full bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border-2 border-purple-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block"
+            >
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
-                  <span className="text-xl">🌱</span>
+                <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Leaf className="w-5 h-5 text-white" />
                 </div>
                 <h4 className="font-bold text-gray-900">Экологическая страничка</h4>
               </div>
               <p className="text-gray-700 text-sm">
                 Воспитание бережного отношения к природе
               </p>
-            </div>
+              <div className="mt-3 text-purple-600 text-sm font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                Перейти на страницу
+                <ExternalLink className="w-3 h-3" />
+              </div>
+            </Link>
           </div>
         </div>
       </section>
+
+      <GenericModal
+        isOpen={isHelplineModalOpen}
+        onClose={() => setIsHelplineModalOpen(false)}
+        title="Телефоны доверия"
+      >
+        <HelplineContent />
+      </GenericModal>
+    </>
   );
 }
