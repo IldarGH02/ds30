@@ -1,4 +1,5 @@
 import {SEO} from "@/entites/SEO";
+import { ContactInfoBanner } from "@/shared";
 
 export const PrivacyPolicyPage = () => {
     return (
@@ -161,12 +162,7 @@ export const PrivacyPolicyPage = () => {
                         </div>
                     </div>
 
-                    {/* Контактная информация */}
-                    <div className="mt-6 p-4 bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl text-center">
-                        <p className="text-gray-600 text-sm">
-                            📞 По вопросам обработки персональных данных можно обратиться к администрации детского сада: <strong className="text-gray-800">956-08-28</strong>
-                        </p>
-                    </div>
+                    <ContactInfoBanner message="По вопросам обработки персональных данных можно обратиться к администрации детского сада" />
 
                 </div>
             </section>

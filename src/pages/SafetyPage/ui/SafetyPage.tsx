@@ -1,4 +1,5 @@
 import {SEO} from "@/entites/SEO";
+import { ContactInfoBanner } from "@/shared";
 
 export const SafetyPage = () => {
     // Ссылки на документы и видео
@@ -190,12 +191,11 @@ export const SafetyPage = () => {
                         </div>
                     </div>
 
-                    {/* Контактная информация */}
-                    <div className="mt-6 p-4 bg-gradient-to-r from-red-50 to-orange-50 rounded-xl text-center">
-                        <p className="text-gray-700 text-sm">
-                            📞 По вопросам безопасности можно обратиться к администрации детского сада: <strong className="text-gray-800">956-08-28</strong>
-                        </p>
-                    </div>
+                    <ContactInfoBanner
+                        message="По вопросам безопасности можно обратиться к администрации детского сада"
+                        className="mt-6 p-4 bg-gradient-to-r from-red-50 to-orange-50 rounded-xl text-center"
+                        textClassName="text-gray-700 text-sm"
+                    />
 
                 </div>
             </section>

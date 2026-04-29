@@ -11,6 +11,7 @@ import { AdaptationContent } from '@/features/adaptation';
 import {RemindersContent} from "@/features/reminders";
 import { EducationalRoutesContent } from '@/features/educational-routes';
 import {SEO} from "@/entites/SEO";
+import { ContactInfoBanner } from "@/shared";
 
 interface ModalState {
     isOpen: boolean;
@@ -180,12 +181,7 @@ export const MethodologyPage = () => {
                         </div>
                     </div>
 
-                    {/* Контактная информация */}
-                    <div className="mt-6 p-4 bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl text-center">
-                        <p className="text-gray-600 text-sm">
-                            📞 По вопросам можно обратиться к администрации детского сада: <strong className="text-gray-800">956-08-28</strong>
-                        </p>
-                    </div>
+                    <ContactInfoBanner message="По вопросам можно обратиться к администрации детского сада" />
 
                 </div>
             </section>

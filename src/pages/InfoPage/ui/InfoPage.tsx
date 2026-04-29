@@ -4,6 +4,7 @@ import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 import { HeadmasterFullInfo } from "@/features/handmaster-info";
 import { GenericModal } from "@/entites/Parents/Modal/GenericModal.tsx";
 import {SEO} from "@/entites/SEO";
+import { ContactInfoBanner } from "@/shared";
 
 const kindergartenCoordinates = [53.242552, 50.237210];
 
@@ -221,12 +222,11 @@ export const InfoPage = () => {
                         </div>
                     </div>
 
-                    {/* Контактная информация */}
-                    <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl text-center">
-                        <p className="text-gray-700 text-sm">
-                            📞 По всем вопросам можно обратиться к администрации детского сада: <strong className="text-gray-800">956-08-28</strong>
-                        </p>
-                    </div>
+                    <ContactInfoBanner
+                        message="По всем вопросам можно обратиться к администрации детского сада"
+                        className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl text-center"
+                        textClassName="text-gray-700 text-sm"
+                    />
                     {/* Карта */}
                     <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-6">
                         <div className="border-l-4 border-blue-500 bg-blue-50 px-5 py-3">

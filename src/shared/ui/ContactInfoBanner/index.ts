@@ -1,2 +1,1 @@
-export { ImageWithFallback } from './ImageWithFallback';
 export { ContactInfoBanner } from "./ContactInfoBanner";

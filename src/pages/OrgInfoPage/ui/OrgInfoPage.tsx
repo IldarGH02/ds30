@@ -9,6 +9,7 @@ import { FinancialActivitiesContent } from "@/features/financial-activities";
 import { VacanciesContent } from "@/features/vacancies";
 import { MealsOrganizationContent } from "@/features/meals-organization";
 import {SEO} from "@/entites/SEO";
+import { ContactInfoBanner } from "@/shared";
 
 export const OrgInfoPage = () => {
     const [modalState, setModalState] = useState<{ isOpen: boolean; title: string; content: React.ReactNode }>({
@@ -80,12 +81,10 @@ export const OrgInfoPage = () => {
                         ))}
                     </div>
 
-                    {/* Контактная информация */}
-                    <div className="mt-10 p-4 bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl text-center">
-                        <p className="text-gray-600 text-sm">
-                            📞 По вопросам можно обратиться к администрации детского сада: <strong className="text-gray-800">956-08-28</strong>
-                        </p>
-                    </div>
+                    <ContactInfoBanner
+                        message="По вопросам можно обратиться к администрации детского сада"
+                        className="mt-10 p-4 bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl text-center"
+                    />
 
                 </div>
 
