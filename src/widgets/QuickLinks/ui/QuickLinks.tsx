@@ -141,7 +141,7 @@ export function QuickLinks() {
             {/* Карточка телефона доверия — открывает модальное окно */}
             <button
               onClick={() => setIsHelplineModalOpen(true)}
-              className="group text-left w-full bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border-2 border-blue-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="group text-left w-full bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border-2 border-blue-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
             >
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
