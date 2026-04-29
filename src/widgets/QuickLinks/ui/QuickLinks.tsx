@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { GenericModal } from '@/entites/Parents/Modal/GenericModal';
-import { HelplineContent } from "@/features/helpline";
+import { HelplineContent } from "@/features/helpline/";
 import { ExternalLink, FileText, Phone as PhoneIcon, Users, Award, AlertCircle, Building, Leaf } from 'lucide-react';
 
 export function QuickLinks() {
@@ -157,8 +157,6 @@ export function QuickLinks() {
                 <ExternalLink className="w-3 h-3" />
               </div>
             </button>
-
-            {/* Карточка Движение ГТО — удалена */}
 
             {/* Карточка экологической странички — ссылка на страницу */}
             <Link
