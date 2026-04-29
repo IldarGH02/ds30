@@ -7,7 +7,7 @@ export function QuickLinks() {
       title: 'План работы ГТО',
       description: 'Центры тестирования комплекса ГТО на 2026 год',
       color: 'bg-blue-500',
-      href: '#',
+      href: 'https://detsad30sam.ru/wa-data/public/site/docs/30/2526/ГТО012026.pdf',
     },
     {
       icon: Building,
