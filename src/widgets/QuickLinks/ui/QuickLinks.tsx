@@ -83,7 +83,7 @@ export function QuickLinks() {
       title: 'Экологическая страничка',
       description: 'Воспитание бережного отношения к природе',
       color: 'bg-purple-500',
-      href: '/ecology',
+      href: '/environmental',
       isExternal: false,
     },
   ];
