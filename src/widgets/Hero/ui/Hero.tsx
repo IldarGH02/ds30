@@ -50,12 +50,12 @@ export function Hero() {
               </div>
               <div className="space-y-4 mt-8">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1574132190990-cfd62178bb1c?w=400"
+                  src=""
                   alt="Обучение"
                   className="rounded-2xl shadow-2xl w-full h-48 object-cover"
                 />
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1763310225537-f7161d5c93e9?w=400"
+                  src=""
                   alt="Игровая зона"
                   className="rounded-2xl shadow-2xl w-full h-48 object-cover"
                 />
