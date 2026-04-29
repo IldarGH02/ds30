@@ -14,6 +14,7 @@ import { NewsPage } from "@/pages/NewsPage";
 import { AchievementsPage } from "@/pages/AchievementsPage";
 import { PrivacyPolicyPage } from "@/pages/PrivacyPolicyPage";
 import { OrgInfoPage } from "@/pages/OrgInfoPage";
+import { EnvironmentalPage } from "@/pages/EnvironmentalPage";
 
 export const MainRoutes = () => {
     return (
@@ -35,6 +36,7 @@ export const MainRoutes = () => {
                 <Route path='/achievements' element={ <AchievementsPage/> } />
                 <Route path='/privacy-policy' element={ <PrivacyPolicyPage/> } />
                 <Route path='/org-info' element={ <OrgInfoPage/> } />
+                <Route path='/environmental' element={ <EnvironmentalPage/> } />
             </Route>
         </Routes>
     );

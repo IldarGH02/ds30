@@ -162,7 +162,7 @@ export function QuickLinks() {
 
             {/* Карточка экологической странички — ссылка на страницу */}
             <Link
-              to="/ecology"
+              to="/environmental"
               className="group text-left w-full bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border-2 border-purple-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block"
             >
               <div className="flex items-center gap-3 mb-3">
