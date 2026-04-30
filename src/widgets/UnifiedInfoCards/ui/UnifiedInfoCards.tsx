@@ -26,11 +26,17 @@ export function UnifiedInfoCards() {
                                 to={card.link}
                                 className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 block"
                             >
-                                <div className={`w-${isImportant ? '14' : '16'} h-${isImportant ? '14' : '16'} rounded-xl bg-gradient-to-br ${card.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                                    <Icon className={`${isImportant ? 'w-7 h-7' : 'w-8 h-8'} text-white`} />
+                                <div className={`rounded-xl bg-gradient-to-br ${card.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform ${
+                                    isImportant ? 'w-14 h-14' : 'w-16 h-16'
+                                }`}>
+                                    <Icon className={`text-white ${
+                                        isImportant ? 'w-7 h-7' : 'w-8 h-8'
+                                    }`} />
                                 </div>
 
-                                <h3 className={`font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors ${isImportant ? 'text-lg' : 'text-xl'}`}>
+                                <h3 className={`font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors ${
+                                    isImportant ? 'text-lg' : 'text-xl'
+                                }`}>
                                     {card.title}
                                 </h3>
 
