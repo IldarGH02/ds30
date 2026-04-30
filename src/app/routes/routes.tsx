@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "@/pages/LayoutPage";
 import { ForParentsPage, HistoryPage, MainPage } from "@/pages";
-import { EnrollmentPage } from "@/pages/EnrollmentPage";
 import { NationalProjectsPage } from "@/pages/NationalProjectsPage";
 import { QualityAssessmentPage } from "@/pages/QualitiAssessment";
 import { ConsultingCenterPage } from "@/pages/ConsultingCenterPage";
@@ -23,7 +22,6 @@ export const MainRoutes = () => {
                 <Route path="/" element={<MainPage />} />
                 <Route path="/for-parents" element={<ForParentsPage />} />
                 <Route path='/history' element={ <HistoryPage/> } />
-                <Route path='/enrollment' element={ <EnrollmentPage/> } />
                 <Route path='/national-projects' element={ <NationalProjectsPage/> } />
                 <Route path='/quality-assessment' element={ <QualityAssessmentPage/> } />
                 <Route path='/consulting-center' element={ <ConsultingCenterPage/> } />
