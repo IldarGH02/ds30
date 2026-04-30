@@ -1,1 +1,1 @@
-export * from './ui/FluPreventionContent'
+export * from './link/fluPreventionLink.ts'

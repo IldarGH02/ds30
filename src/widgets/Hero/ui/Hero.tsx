@@ -1,6 +1,8 @@
 import { ImageWithFallback } from '@/shared/ui/ImageWithFallback';
 import ExitImg from '@/shared/assets/heroImg/exit.jpg';
 import BackImg from '@/shared/assets/heroImg/back.jpg';
+import YardImg from '@/shared/assets/heroImg/yard.jpg';
+import SamaraImg from '@/shared/assets/heroImg/samara.jpg';
 
 export function Hero() {
   return (
@@ -50,13 +52,13 @@ export function Hero() {
               </div>
               <div className="space-y-4 mt-8">
                 <ImageWithFallback
-                  src=""
-                  alt="Обучение"
+                  src={ YardImg }
+                  alt="Двор"
                   className="rounded-2xl shadow-2xl w-full h-48 object-cover"
                 />
                 <ImageWithFallback
-                  src=""
-                  alt="Игровая зона"
+                  src={ SamaraImg }
+                  alt="Самара"
                   className="rounded-2xl shadow-2xl w-full h-48 object-cover"
                 />
               </div>

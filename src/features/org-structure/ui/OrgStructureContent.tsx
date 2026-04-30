@@ -1,4 +1,4 @@
-// features/org-structure/ui/OrgStructureContent.tsx
+// features/org-structure/ui-elements/OrgStructureContent.tsx
 export const OrgStructureContent = () => {
     const pdfLinks = {
         generalMeeting: 'https://detsad30sam.ru/wa-data/public/site/docs/30/2526/ОСР.pdf',

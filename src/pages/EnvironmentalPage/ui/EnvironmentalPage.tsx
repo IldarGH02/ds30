@@ -1,4 +1,4 @@
-// pages/environmental-page/ui/EnvironmentalPage.tsx
+// pages/environmental-page/ui-elements/EnvironmentalPage.tsx
 export const EnvironmentalPage = () => {
     const pdfLinks = {
       // Консультации для родителей
@@ -10,6 +10,7 @@ export const EnvironmentalPage = () => {
       natureWalkMemo: 'https://cloud.mail.ru/public/9vMg/VAjUdvTWA',
       ecologyConsult2: 'https://cloud.mail.ru/public/4yzZ/JjnwrWtbo',
       ecologyConsult3: 'https://cloud.mail.ru/public/LceN/i2euVRcxR',
+
       // Образовательные маршруты
       goldenAutumn: 'https://cloud.mail.ru/public/3Q3D/GjMVivHNN',
       insects: 'https://cloud.mail.ru/public/GuH2/RqeGWhbVj',

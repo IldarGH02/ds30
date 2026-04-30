@@ -6,7 +6,7 @@ export const AchievementsPage = () => {
         <>
             <SEO
                 title="Достижения"
-                description="Достижения десткого сада и его воспитанников"
+                description="Достижения детского сада и его воспитанников"
                 url="https://ds30.vercel.app/achievements"
             />
             <section className="py-12 bg-gray-50 min-h-screen">
@@ -28,15 +28,12 @@ export const AchievementsPage = () => {
                     {/* Блок-заглушка */}
                     <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
                         <div className="p-12 text-center">
-                            {/* Иконка */}
-                            <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l2 2" />
+                            <div className="w-24 h-24 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <svg className="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                             </div>
 
-                            {/* Текст заглушки */}
                             <h2 className="text-2xl font-semibold text-gray-700 mb-3">
                                 Информация готовится к публикации
                             </h2>
@@ -48,7 +45,6 @@ export const AchievementsPage = () => {
                                 Следите за обновлениями!
                             </p>
 
-                            {/* Декоративная линия */}
                             <div className="w-16 h-1 bg-gray-200 mx-auto mt-6 rounded-full"></div>
                         </div>
                     </div>

@@ -1,41 +1,23 @@
-import { useState } from 'react';
+import { useState, ReactNode } from 'react';
 import { GenericModal } from '@/entites/Parents/Modal/GenericModal';
-import { OrgStructureContent } from "@/features/org-structure";
-import { DocumentsContent } from '@/features/documents';
-import { EducationContent } from '@/features/education/ui/EducationContent';
-import { EducationalStandardsContent } from "@/features/educational-standards";
-import { TeachingStaffContent } from "@/features/teaching-staff";
-import { FinancialActivitiesContent } from "@/features/financial-activities";
-import { VacanciesContent } from "@/features/vacancies";
-import { MealsOrganizationContent } from "@/features/meals-organization";
-import {SEO} from "@/entites/SEO";
+import { SEO } from "@/entites/SEO";
 import { ContactInfoBanner } from "@/shared";
+import { sections } from '@/features/org-structure/model/SectionsModel.tsx'
 
 export const OrgInfoPage = () => {
-    const [modalState, setModalState] = useState<{ isOpen: boolean; title: string; content: React.ReactNode }>({
+    const [modalState, setModalState] = useState<{ isOpen: boolean; title: string; content: ReactNode }>({
         isOpen: false,
         title: '',
         content: null,
     });
 
-    const openModal = (title: string, content: React.ReactNode) => {
+    const openModal = (title: string, content: ReactNode) => {
         setModalState({ isOpen: true, title, content });
     };
 
     const closeModal = () => {
         setModalState({ isOpen: false, title: '', content: null });
     };
-
-    const sections = [
-        { title: 'Структура и органы управления', content: <OrgStructureContent />, icon: '🏛️' },
-        { title: 'Документы', content: <DocumentsContent />, icon: '📄' },
-        { title: 'Образование', content: <EducationContent />, icon: '🎓' },
-        { title: 'Образовательные стандарты и требования', content: <EducationalStandardsContent />, icon: '📖' },
-        { title: 'Педагогический состав', content: <TeachingStaffContent />, icon: '👩‍🏫' },
-        { title: 'Финансово-хозяйственная деятельность', content: <FinancialActivitiesContent />, icon: '📊' },
-        { title: 'Вакантные места для приема (перевода) обучающихся', content: <VacanciesContent />, icon: '📢' },
-        { title: 'Организация питания в ДОУ', content: <MealsOrganizationContent />, icon: '🍎' },
-    ];
 
     return (
         <>

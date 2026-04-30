@@ -1,16 +1,6 @@
+import { DocumentLink, pdfLinks } from "@/features/meals-organization";
+
 export const MealsOrganizationContent = () => {
-    const pdfLinks = {
-        menuAutumnWinter_3_7: 'https://detsad30sam.ru/wa-data/public/site/docs/30/2425/меню%20на%20сад%20-%20осень-зима%20(1).pdf',
-        menuAutumnWinter_2_3: 'https://detsad30sam.ru/wa-data/public/site/docs/30/2425/меню%20на%20ясли%20%20осень-зима%20(1).pdf',
-        menuSummer_3_7: 'https://detsad30sam.ru/wa-data/public/site/docs/30/2526/лето.pdf',
-        menuSummer_2_3: 'https://detsad30sam.ru/wa-data/public/site/docs/30/2425/меню%20лето%20ясли.pdf',
-        dailyMenu: 'https://drive.google.com/drive/folders/1Xu_hk9C7zgFA3LCN90vjCYh6VhonX7H9?usp=sharing',
-        schedule: 'https://detsad30sam.ru/wa-data/public/site/docs/30/2425/график%20выдачи%20питания.pdf',
-        mealSchedule: 'https://detsad30sam.ru/wa-data/public/site/docs/30/2425/режим%20питания.pdf',
-        contract: 'https://detsad30sam.ru/wa-data/public/site/docs/30/2526/кшшп.pdf',
-        additionalAgreement1: 'https://9c6a61ca-e0f7-4dbf-b657-e20bf093d98e.usrfiles.com/ugd/9c6a61_e115ed7b883649c18907e8a576d7ef25.pdf',
-        additionalAgreement2: 'https://cf529e00-8950-4517-b50a-c67b79f84ba8.usrfiles.com/ugd/cf529e_24360ea636784555814c8abf24d7b7d7.pdf',
-    };
 
     return (
         <div className="space-y-6">
@@ -161,17 +151,3 @@ export const MealsOrganizationContent = () => {
         </div>
     );
 };
-
-const DocumentLink = ({ title, url }: { title: string; url: string }) => (
-    <a
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 py-1.5 px-2 bg-gray-50 rounded-lg hover:bg-orange-50 transition-colors text-gray-700 text-sm hover:text-orange-600"
-    >
-        <svg className="w-4 h-4 flex-shrink-0 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-        </svg>
-        <span>{title}</span>
-    </a>
-);

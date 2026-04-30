@@ -1,6 +1,5 @@
 import { Phone as PhoneIcon } from 'lucide-react';
 
-// Компонент с телефонами доверия
 export const HelplineContent = () => {
     return (
       <div className="space-y-5">

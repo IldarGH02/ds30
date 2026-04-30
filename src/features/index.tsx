@@ -1,48 +1,9 @@
 import { ReactNode } from "react"
 
-import { ImportantContent } from './important-info/ui/ImportantContent';
-import { FluPreventionContent } from "@/features/flu-prevention";
-import { ProtectionServicesContent } from "@/features/protection-services/ui/ProtectionServicesContent.tsx";
-import { EightRulesContent } from "@/features/eight-rules";
-import { DistrictParentMeetingContent } from "@/features/district-parent-meeting/ui/DistrictParentMeetingContent.tsx";
-import { GtoContent } from "@/features/gto";
-import { ParentEducationContent } from "@/features/parent-education";
-import { NationalProjectsContent } from "@/features/national-projects";
-import { PublicInformingContent } from "@/features/public-informing";
-import { OnlineSurveyContent } from "@/features/online-survey/ui/OnlineSurveyContent.tsx";
-import { UsefulLibraryContent } from "@/features/useful-library";
-import { VideoCollectionContent } from "@/features/video-collection";
-import { PsychologistConsultationsContent } from "@/features/psychologist-consultations";
-import { PersonalizedFinancingContent } from "@/features/personalized-financing";
-import { QueueInfoContent } from "@/features/queue-info";
 import { ElectronicResourcesContent } from "@/features/electronic-resources";
-import { FamilyGroupsContent } from "@/features/family-groups";
 
 export const contentMap: Record<string, ReactNode> = {
-    'Это важно': <ImportantContent />,
-    'Профилактика гриппа': <FluPreventionContent />,
-    'Национальный проект': <NationalProjectsContent />,
-    'О национальных проектах': <NationalProjectsContent />,
-    'Информирование родительской и педагогической общественности': <PublicInformingContent />,
-    'План мероприятий по реализации национальных проектов': <NationalProjectsContent />,
-    'Персонифицированное финансирование дополнительного образования': <PersonalizedFinancingContent />,
-    'Онлайн-опрос': <OnlineSurveyContent />,
-    'Полезная библиотека для родителей': <UsefulLibraryContent />,
-    'Коллекция фильмов и роликов': <VideoCollectionContent />,
-    'Консультации педагога-психолога': <PsychologistConsultationsContent />,
-    'Службы защиты': <ProtectionServicesContent />,
-    '8 правил для родителей': <EightRulesContent />,
-    '8 правил для родителей (памятка)': <EightRulesContent />,
-    'Окружное родительское собрание': <DistrictParentMeetingContent />,
-    'Движение ГТО': <GtoContent />,
-    'Просвещение родителей': <ParentEducationContent />,
-    'Просвещение родителей (памятка)': <ParentEducationContent />,
-    'Мониторинг качества услуг': <OnlineSurveyContent />,
-    'Коллекция фильмов и роликов для родителей о воспитании детей': <VideoCollectionContent />,
-    'Узнай очередь в детский сад': <QueueInfoContent />,
-    'Проверить очередь в детский сад': <QueueInfoContent />,
-    'Электронные ресурсы для родителей': <ElectronicResourcesContent />,
-    'Семейные воспитательные группы': <FamilyGroupsContent />,
+    'Электронные ресурсы для родителей': <ElectronicResourcesContent />
 };
 
 // Функция для получения контента по заголовку

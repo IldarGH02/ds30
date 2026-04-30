@@ -1,20 +1,18 @@
 import {
   Hero,
-  SectionCards,
-  ImportantInfo,
   WelcomePoem,
   QuickLinks,
   InfoBanner,
 } from '@/widgets';
-import {SEO} from "@/entites/SEO";
+import { SEO } from "@/entites/SEO";
+import { UnifiedInfoCards } from "@/widgets/UnifiedInfoCards";
 
 export function MainPage() {
       return (
             <>
                 <SEO/>
                 <Hero />
-                <SectionCards />
-                <ImportantInfo />
+                <UnifiedInfoCards/>
                 <WelcomePoem />
                 <QuickLinks />
                 <InfoBanner />
